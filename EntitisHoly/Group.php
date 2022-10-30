@@ -65,4 +65,4 @@ class Group{
         $this->leader = $newLeader;
     }
     
-}
+} 

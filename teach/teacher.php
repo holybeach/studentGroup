@@ -10,35 +10,41 @@ class Teacher extends Methods{
         string $lastName,
         DateTime $birthDate,
         string $gender,
-        private Group $diploma,
-        private Group $experience,
-        private Group $subj,
-    ){
+        private  $diploma,
+        private $experience,
+        private  $subj,
+        private Cafedra $cafedra,
+        private Group $group,
+    )
+    
+    {
         parent::__construct(
             firstName:$firstName,
             lastName:$lastName,
             birthDate:$birthDate,
             gender:$gender);
     }
-    public function getDiploma(): Group{
-        return $this->diploma;
+
+    public function getCafedra(): Cafedra{
+        return $this->group;
     }
-    public function getExperience(): Group{
-        return $this->experience;
-    }
-    public function getSubj(): Group{
-      return $this->subj;
-  }
+
     public function setStatus(string $newStatus){
         $this->status=$newStatus;
     }
+
     public function getStatus(){
         return $this->status;
     }
+
     public function setDateOfTch(DateTime $date){
         $this->dateOfTch=$date;
     } 
+
     public function setReestablishDate(DateTime $date){
         $this->reestablishDate=$date;
     } 
+    public function getGroup(): Group{
+        return $this->group;
+    }
 }
