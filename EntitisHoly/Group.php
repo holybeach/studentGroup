@@ -36,6 +36,8 @@ class Group{
                 unset($this->students[$k]);
                 $val->setDateOfSth(new DateTime());
                 $group->addStudent($val);
+                $newLog= new EntitisHood\Log($val->getGroup(),$group,new DateTime(),'Переезд');
+                $val->addLog($newLog);
             }
         }
     }
